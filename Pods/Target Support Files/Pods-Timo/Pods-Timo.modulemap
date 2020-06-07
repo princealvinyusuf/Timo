@@ -1,0 +1,6 @@
+framework module Pods_Timo {
+  umbrella header "Pods-Timo-umbrella.h"
+
+  export *
+  module * { export * }
+}
