@@ -24,6 +24,9 @@
 #include <string>
 #include <utility>
 
+#include "Firestore/core/src/firebase/firestore/nanopb/byte_string.h"
+#include "Firestore/core/src/firebase/firestore/nanopb/message.h"
+#include "Firestore/core/src/firebase/firestore/nanopb/writer.h"
 #include "absl/strings/string_view.h"
 #include "leveldb/db.h"
 
@@ -154,14 +157,14 @@ class LevelDbTransaction {
    * Remove the database entry (if any) for "key".  It is not an error if "key"
    * did not exist in the database.
    */
-  void Delete(const absl::string_view& key);
+  void Delete(absl::string_view key);
 
 #if __OBJC__
   /**
    * Schedules the row identified by `key` to be set to the given protocol
    * buffer message when this transaction commits.
    */
-  void Put(const absl::string_view& key, GPBMessage* message) {
+  void Put(absl::string_view key, GPBMessage* message) {
     NSData* data = [message data];
     std::string key_string(key);
     mutations_[key_string] = std::string((const char*)data.bytes, data.length);
@@ -173,7 +176,16 @@ class LevelDbTransaction {
    * Schedules the row identified by `key` to be set to `value` when this
    * transaction commits.
    */
-  void Put(const absl::string_view& key, const absl::string_view& value);
+  void Put(std::string key, std::string value);
+
+  /**
+   * Schedules the row identified by `key` to be set to the given protocol
+   * buffer message when this transaction commits.
+   */
+  template <typename T>
+  void Put(std::string key, const nanopb::Message<T>& message) {
+    Put(std::move(key), MakeStdString(message));
+  }
 
   /**
    * Sets the contents of `value` to the latest known value for the given key,
@@ -181,7 +193,7 @@ class LevelDbTransaction {
    * doesn't exist in leveldb, or it is scheduled for deletion in this
    * transaction, `Status::NotFound` is returned.
    */
-  leveldb::Status Get(const absl::string_view& key, std::string* value);
+  leveldb::Status Get(absl::string_view key, std::string* value);
 
   /**
    * Returns a new Iterator over the pending changes in this transaction, merged
@@ -198,12 +210,12 @@ class LevelDbTransaction {
   std::string ToString();
 
  private:
-  leveldb::DB* db_;
+  leveldb::DB* db_ = nullptr;
   Mutations mutations_;
   Deletions deletions_;
   leveldb::ReadOptions read_options_;
   leveldb::WriteOptions write_options_;
-  int32_t version_;
+  int32_t version_ = 0;
   std::string label_;
 };
 

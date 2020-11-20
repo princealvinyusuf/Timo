@@ -6,8 +6,9 @@ target 'Timo' do
   pod 'MessageKit'
   pod 'BonsaiController'
   pod 'Firebase/Core'
-  pod 'Firebase/Auth'
+  pod 'Firebase/Auth','~> 6.12.0'
   pod 'Firebase/Storage'
+  pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
   post_install do |installer|
       installer.pods_project.targets.each do |target|

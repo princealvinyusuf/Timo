@@ -18,17 +18,24 @@
 #define FIRESTORE_CORE_SRC_FIREBASE_FIRESTORE_LOCAL_LOCAL_SERIALIZER_H_
 
 #include <memory>
+#include <utility>
 #include <vector>
 
+#include "Firestore/Protos/nanopb/firestore/local/maybe_document.nanopb.h"
+#include "Firestore/Protos/nanopb/firestore/local/mutation.nanopb.h"
+#include "Firestore/Protos/nanopb/firestore/local/target.nanopb.h"
 #include "Firestore/core/src/firebase/firestore/local/query_data.h"
 #include "Firestore/core/src/firebase/firestore/model/document.h"
 #include "Firestore/core/src/firebase/firestore/model/maybe_document.h"
+#include "Firestore/core/src/firebase/firestore/model/mutation_batch.h"
 #include "Firestore/core/src/firebase/firestore/model/no_document.h"
 #include "Firestore/core/src/firebase/firestore/model/types.h"
+#include "Firestore/core/src/firebase/firestore/model/unknown_document.h"
+#include "Firestore/core/src/firebase/firestore/nanopb/message.h"
 #include "Firestore/core/src/firebase/firestore/nanopb/reader.h"
 #include "Firestore/core/src/firebase/firestore/nanopb/writer.h"
 #include "Firestore/core/src/firebase/firestore/remote/serializer.h"
-#include "Firestore/core/src/firebase/firestore/util/status.h"
+#include "Firestore/core/src/firebase/firestore/util/status_fwd.h"
 
 namespace firebase {
 namespace firestore {
@@ -37,124 +44,101 @@ namespace local {
 /**
  * @brief Serializer for values stored in the LocalStore.
  *
+ * All errors that occur during serialization are fatal.
+ *
+ * All deserialization methods (that can fail) take a nanopb::Reader parameter
+ * whose status will be set to failed upon an error. Callers must check this
+ * before using the returned value via `reader->status()`. A deserialization
+ * method might fail if a protocol buffer is missing a critical field or has a
+ * value we can't interpret. On error, the return value from a deserialization
+ * method is unspecified.
+ *
  * Note that local::LocalSerializer currently delegates to the
- * remote::Serializer (for the Firestore v1beta1 RPC protocol) to save
- * implementation time and code duplication. We'll need to revisit this when the
- * RPC protocol we use diverges from local storage.
+ * remote::Serializer (for the Firestore v1 RPC protocol) to save implementation
+ * time and code duplication. We'll need to revisit this when the RPC protocol
+ * we use diverges from local storage.
  */
 class LocalSerializer {
  public:
-  explicit LocalSerializer(const remote::Serializer& rpc_serializer)
-      : rpc_serializer_(rpc_serializer) {
+  explicit LocalSerializer(remote::Serializer rpc_serializer)
+      : rpc_serializer_(std::move(rpc_serializer)) {
   }
 
   /**
-   * @brief Encodes a MaybeDocument model to the equivalent bytes for local
-   * storage.
-   *
-   * @param maybe_doc the model to convert.
-   * @param[out] out_bytes A buffer to place the output. The bytes will be
-   * appended to this vector.
-   * @return A Status, which if not ok(), indicates what went wrong. Note that
-   * errors during encoding generally indicate a serious/fatal error.
+   * @brief Encodes a MaybeDocument model to the equivalent nanopb proto for
+   * local storage.
    */
-  // TODO(rsgowman): If we never support any output except to a vector, it may
-  // make sense to have LocalSerializer own the vector and provide an accessor
-  // rather than asking the user to create it first.
-  util::Status EncodeMaybeDocument(const model::MaybeDocument& maybe_doc,
-                                   std::vector<uint8_t>* out_bytes) const;
+  nanopb::Message<firestore_client_MaybeDocument> EncodeMaybeDocument(
+      const model::MaybeDocument& maybe_doc) const;
 
   /**
-   * @brief Decodes bytes representing a MaybeDocument proto to the equivalent
-   * model.
-   *
-   * @param bytes The bytes to convert. It's assumed that exactly all of the
-   * bytes will be used by this conversion.
-   * @return The model equivalent of the bytes or a Status indicating what went
-   * wrong.
+   * @brief Decodes nanopb proto representing a MaybeDocument proto to the
+   * equivalent model.
    */
-  util::StatusOr<std::unique_ptr<model::MaybeDocument>> DecodeMaybeDocument(
-      const uint8_t* bytes, size_t length) const;
+  model::MaybeDocument DecodeMaybeDocument(
+      nanopb::Reader* reader,
+      const firestore_client_MaybeDocument& proto) const;
 
   /**
-   * @brief Decodes bytes representing a MaybeDocument proto to the equivalent
-   * model.
-   *
-   * @param bytes The bytes to convert. It's assumed that exactly all of the
-   * bytes will be used by this conversion.
-   * @return The model equivalent of the bytes or a Status indicating what went
-   * wrong.
-   */
-  util::StatusOr<std::unique_ptr<model::MaybeDocument>> DecodeMaybeDocument(
-      const std::vector<uint8_t>& bytes) const {
-    return DecodeMaybeDocument(bytes.data(), bytes.size());
-  }
-
-  /**
-   * @brief Encodes a QueryData to the equivalent bytes, representing a
+   * @brief Encodes a QueryData to the equivalent nanopb proto, representing a
    * ::firestore::proto::Target, for local storage.
-   *
-   * @param[out] out_bytes A buffer to place the output. The bytes will be
-   * appended to this vector.
-   * @return A Status, which if not ok(), indicates what went wrong. Note that
-   * errors during encoding generally indicate a serious/fatal error.
    */
-  // TODO(rsgowman): If we never support any output except to a vector, it may
-  // make sense to have LocalSerializer own the vector and provide an accessor
-  // rather than asking the user to create it first.
-  util::Status EncodeQueryData(const QueryData& query_data,
-                               std::vector<uint8_t>* out_bytes) const;
+  nanopb::Message<firestore_client_Target> EncodeQueryData(
+      const QueryData& query_data) const;
 
   /**
-   * @brief Decodes bytes representing a ::firestore::proto::Target proto to the
-   * equivalent QueryData.
-   *
-   * @param bytes The bytes to convert. It's assumed that exactly all of the
-   * bytes will be used by this conversion.
-   * @return The QueryData equivalent of the bytes or a Status indicating what
-   * went wrong.
+   * @brief Decodes nanopb proto representing a ::firestore::proto::Target proto
+   * to the equivalent QueryData.
    */
-  util::StatusOr<QueryData> DecodeQueryData(const uint8_t* bytes,
-                                            size_t length) const;
+  QueryData DecodeQueryData(nanopb::Reader* reader,
+                            const firestore_client_Target& proto) const;
 
   /**
-   * @brief Decodes bytes representing a ::firestore::proto::Target proto to the
-   * equivalent QueryData.
-   *
-   * @param bytes The bytes to convert. It's assumed that exactly all of the
-   * bytes will be used by this conversion.
-   * @return The QueryData equivalent of the bytes or a Status indicating what
-   * went wrong.
+   * @brief Encodes a MutationBatch to the equivalent nanopb proto, representing
+   * a ::firestore::client::WriteBatch, for local storage in the mutation queue.
    */
-  util::StatusOr<QueryData> DecodeQueryData(
-      const std::vector<uint8_t>& bytes) const {
-    return DecodeQueryData(bytes.data(), bytes.size());
-  }
+  nanopb::Message<firestore_client_WriteBatch> EncodeMutationBatch(
+      const model::MutationBatch& mutation_batch) const;
+
+  /**
+   * @brief Decodes a nanopb proto representing a
+   * ::firestore::client::WriteBatch proto to the equivalent MutationBatch.
+   */
+  model::MutationBatch DecodeMutationBatch(
+      nanopb::Reader* reader, const firestore_client_WriteBatch& proto) const;
+
+  google_protobuf_Timestamp EncodeVersion(
+      const model::SnapshotVersion& version) const;
+
+  model::SnapshotVersion DecodeVersion(
+      nanopb::Reader* reader, const google_protobuf_Timestamp& proto) const;
 
  private:
-  void EncodeMaybeDocument(nanopb::Writer* writer,
-                           const model::MaybeDocument& maybe_doc) const;
-  std::unique_ptr<model::MaybeDocument> DecodeMaybeDocument(
-      nanopb::Reader* reader) const;
-
   /**
-   * Encodes a Document for local storage. This differs from the v1beta1 RPC
+   * Encodes a Document for local storage. This differs from the v1 RPC
    * serializer for Documents in that it preserves the updateTime, which is
    * considered an output only value by the server.
    */
-  void EncodeDocument(nanopb::Writer* writer, const model::Document& doc) const;
+  google_firestore_v1_Document EncodeDocument(const model::Document& doc) const;
 
-  void EncodeNoDocument(nanopb::Writer* writer,
-                        const model::NoDocument& no_doc) const;
+  model::Document DecodeDocument(nanopb::Reader* reader,
+                                 const google_firestore_v1_Document& proto,
+                                 bool has_committed_mutations) const;
 
-  std::unique_ptr<model::NoDocument> DecodeNoDocument(
-      nanopb::Reader* reader) const;
+  firestore_client_NoDocument EncodeNoDocument(
+      const model::NoDocument& no_doc) const;
 
-  void EncodeQueryData(nanopb::Writer* writer,
-                       const QueryData& query_data) const;
-  QueryData DecodeQueryData(nanopb::Reader* reader) const;
+  model::NoDocument DecodeNoDocument(nanopb::Reader* reader,
+                                     const firestore_client_NoDocument& proto,
+                                     bool has_committed_mutations) const;
 
-  const remote::Serializer& rpc_serializer_;
+  firestore_client_UnknownDocument EncodeUnknownDocument(
+      const model::UnknownDocument& unknown_doc) const;
+  model::UnknownDocument DecodeUnknownDocument(
+      nanopb::Reader* reader,
+      const firestore_client_UnknownDocument& proto) const;
+
+  remote::Serializer rpc_serializer_;
 };
 
 }  // namespace local

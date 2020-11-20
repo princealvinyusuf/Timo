@@ -13,7 +13,9 @@ class MasterViewController: UITableViewController {
         @IBOutlet var emptyCafeView: UIView!
     var detailViewController: DetailViewController? = nil
 
-
+    @IBOutlet weak var memoImage: UIImageView!
+    @IBOutlet weak var emtpyMemo: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +101,11 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return objects.count
+        if ReallySimpleNoteStorage.storage.count() != 0 {
+            memoImage.isHidden = true
+            emtpyMemo.text = "Express Feeling"
+            
+        }
         return ReallySimpleNoteStorage.storage.count()
     }
 

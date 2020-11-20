@@ -418,7 +418,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.023529411764705882" green="0.83921568627450982" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" systemColor="systemBackgroundColor"/>
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
@@ -451,7 +451,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="WER-9L-3W8" kind="relationship" relationship="rootViewController" id="PHH-y8-xhm"/>
+                        <segue destination="SoK-mr-xNv" kind="relationship" relationship="rootViewController" id="UKO-8c-1ah"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdF-Yn-dTG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -492,11 +492,11 @@
             <objects>
                 <viewController title="About" id="W2J-lR-4nW" customClass="AboutController" customModule="Timo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eIy-8h-zQu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="36V-EK-AWS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="60"/>
                                 <color key="barTintColor" red="0.023529411764705882" green="0.83921568627450982" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -506,22 +506,22 @@
                                 </items>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo Hitam" translatesAutoresizingMaskIntoConstraints="NO" id="oTE-Xl-fEJ">
-                                <rect key="frame" x="115.66666666666669" y="74" width="144" height="130"/>
+                                <rect key="frame" x="115.66666666666669" y="121.99999999999999" width="144" height="135.66666666666663"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Timo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqr-6L-z0j">
-                                <rect key="frame" x="0.0" y="216" width="375" height="33"/>
+                                <rect key="frame" x="0.0" y="269.66666666666669" width="375" height="33"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer Team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exx-bj-Kko">
-                                <rect key="frame" x="0.0" y="453" width="375" height="33"/>
+                                <rect key="frame" x="0.0" y="518" width="375" height="33"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTg-sW-cNa">
-                                <rect key="frame" x="5" y="257" width="365" height="184"/>
+                                <rect key="frame" x="5" y="310.66666666666669" width="365" height="195.33333333333331"/>
                                 <string key="text">Timo is developed to be a platform for people to express their thoughts, particularly sadness or other negative feelings as we believe outward expression is very important and writing is a very good channel to do so. It has therapeutic affect and we hope Timo can provide you with relieve.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
@@ -533,25 +533,25 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="plW-Xq-5Dh">
-                                <rect key="frame" x="5" y="494" width="365" height="96"/>
+                                <rect key="frame" x="5" y="559" width="365" height="100.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="f7h-dX-Jfk">
-                                        <rect key="frame" x="0.0" y="0.0" width="173" height="96"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="100.66666666666667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alton Lunandi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcw-ic-DoT">
-                                                <rect key="frame" x="0.0" y="0.0" width="173" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="173" height="31.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audrey Saudjhana" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3I-qU-XAb">
-                                                <rect key="frame" x="0.0" y="33" width="173" height="30"/>
+                                                <rect key="frame" x="0.0" y="34.666666666666629" width="173" height="31.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dea Almira" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOP-nu-ZZX">
-                                                <rect key="frame" x="0.0" y="66" width="173" height="30"/>
+                                                <rect key="frame" x="0.0" y="69.333333333333371" width="173" height="31.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -559,22 +559,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="EXG-Km-6jW">
-                                        <rect key="frame" x="191" y="0.0" width="174" height="96"/>
+                                        <rect key="frame" x="191" y="0.0" width="174" height="100.66666666666667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prince Alvin Yusuf" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPC-Qu-Wup">
-                                                <rect key="frame" x="0.0" y="0.0" width="174" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="174" height="31.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dayton" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bs-K9-OLr">
-                                                <rect key="frame" x="0.0" y="33" width="174" height="30"/>
+                                                <rect key="frame" x="0.0" y="34.666666666666629" width="174" height="31.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Petter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hm3-n9-mbW">
-                                                <rect key="frame" x="0.0" y="66" width="174" height="30"/>
+                                                <rect key="frame" x="0.0" y="69.333333333333371" width="174" height="31.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -620,166 +620,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="99Y-9w-qLb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1485.5999999999999" y="-746.30541871921184"/>
-        </scene>
-        <!--New Memo-->
-        <scene sceneID="ZL3-5l-gv7">
-            <objects>
-                <viewController id="AIH-aJ-gkp" customClass="ReallySimpleNoteCreateChangeViewController" customModule="Timo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZcF-mE-NJR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memo Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9F-no-Rc8">
-                                <rect key="frame" x="16" y="60" width="143" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Memo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AED-CA-luS">
-                                <rect key="frame" x="16" y="127" width="343" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Memo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mu8-qE-woh">
-                                <rect key="frame" x="16" y="85" width="343" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="noteTitleChanged:forEvent:" destination="AIH-aJ-gkp" eventType="editingDidEnd" id="LN4-Yu-4cE"/>
-                                </connections>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" allowsEditingTextAttributes="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8xj-20-lEO">
-                                <rect key="frame" x="16" y="152" width="343" height="463"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="463" id="RRL-Hx-GsH"/>
-                                    <constraint firstAttribute="width" constant="343" id="aWS-VI-Ops"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memo Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8h-yB-UuP">
-                                <rect key="frame" x="150" y="60" width="209" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="msn-Cm-dVI"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="8xj-20-lEO" firstAttribute="leading" secondItem="msn-Cm-dVI" secondAttribute="leading" constant="16" id="G7S-c1-nXU"/>
-                            <constraint firstItem="msn-Cm-dVI" firstAttribute="trailing" secondItem="8xj-20-lEO" secondAttribute="trailing" constant="16" id="H2l-T3-uai"/>
-                            <constraint firstItem="msn-Cm-dVI" firstAttribute="trailing" secondItem="v9F-no-Rc8" secondAttribute="trailing" constant="216" id="Jch-zb-PJ1"/>
-                            <constraint firstItem="v9F-no-Rc8" firstAttribute="top" secondItem="msn-Cm-dVI" secondAttribute="top" constant="16" id="Lc7-6V-bsU"/>
-                            <constraint firstItem="8xj-20-lEO" firstAttribute="top" secondItem="AED-CA-luS" secondAttribute="bottom" constant="8" id="cKD-Yc-wRE"/>
-                            <constraint firstItem="v9F-no-Rc8" firstAttribute="leading" secondItem="msn-Cm-dVI" secondAttribute="leading" constant="16" id="cT7-ys-5v4"/>
-                            <constraint firstItem="AED-CA-luS" firstAttribute="top" secondItem="Mu8-qE-woh" secondAttribute="bottom" constant="8" id="elE-1k-FVm"/>
-                            <constraint firstItem="8xj-20-lEO" firstAttribute="top" secondItem="AED-CA-luS" secondAttribute="bottom" constant="8" id="f68-EI-pXb"/>
-                            <constraint firstItem="Mu8-qE-woh" firstAttribute="top" secondItem="v9F-no-Rc8" secondAttribute="bottom" constant="8" id="hcr-DT-fAE"/>
-                            <constraint firstItem="msn-Cm-dVI" firstAttribute="trailing" secondItem="AED-CA-luS" secondAttribute="trailing" constant="16" id="i3n-Fe-xA4"/>
-                            <constraint firstItem="A8h-yB-UuP" firstAttribute="top" secondItem="msn-Cm-dVI" secondAttribute="top" constant="16" id="jcg-rf-Ga8"/>
-                            <constraint firstItem="msn-Cm-dVI" firstAttribute="trailing" secondItem="Mu8-qE-woh" secondAttribute="trailing" constant="16" id="kcT-xO-EB3"/>
-                            <constraint firstItem="Mu8-qE-woh" firstAttribute="leading" secondItem="msn-Cm-dVI" secondAttribute="leading" constant="16" id="rFV-nV-90j"/>
-                            <constraint firstItem="msn-Cm-dVI" firstAttribute="trailing" secondItem="A8h-yB-UuP" secondAttribute="trailing" constant="16" id="tSr-So-MQ9"/>
-                            <constraint firstItem="AED-CA-luS" firstAttribute="leading" secondItem="msn-Cm-dVI" secondAttribute="leading" constant="16" id="wdM-NH-pGF"/>
-                            <constraint firstItem="A8h-yB-UuP" firstAttribute="leading" secondItem="msn-Cm-dVI" secondAttribute="leading" constant="150" id="wkX-VV-f8Q"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="New Memo" id="19S-CF-h8X">
-                        <barButtonItem key="rightBarButtonItem" title="Create" id="6Ah-Yo-Jj7">
-                            <connections>
-                                <action selector="doneButtonClicked:forEvent:" destination="AIH-aJ-gkp" id="BQs-TX-6ev"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="noteDateLabel" destination="A8h-yB-UuP" id="L7q-KU-EBw"/>
-                        <outlet property="noteDoneButton" destination="6Ah-Yo-Jj7" id="PDP-Mg-3K0"/>
-                        <outlet property="noteTextTextView" destination="8xj-20-lEO" id="vsr-7W-xXZ"/>
-                        <outlet property="noteTitleTextField" destination="Mu8-qE-woh" id="FSA-kB-sLb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sNC-5D-svP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2510" y="-915"/>
-        </scene>
-        <!--Memo-->
-        <scene sceneID="Jpe-18-cxF">
-            <objects>
-                <viewController id="WER-9L-3W8" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UEq-Hc-A6C">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-memo" translatesAutoresizingMaskIntoConstraints="NO" id="IZj-4b-FWj">
-                                <rect key="frame" x="-172" y="247" width="719" height="190"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="190" id="1NY-vc-4o4"/>
-                                    <constraint firstAttribute="width" constant="719" id="5QU-ea-wJE"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write your first memo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hw-6C-5b9">
-                                <rect key="frame" x="100" y="521" width="175" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="2KP-wd-MAA"/>
-                                    <constraint firstAttribute="width" constant="175" id="Eky-pO-6cM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty Memo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4N-yS-Hvv">
-                                <rect key="frame" x="89" y="472" width="197" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="197" id="wVe-hn-wt3"/>
-                                    <constraint firstAttribute="height" constant="41" id="yb2-T9-6KL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="751-8C-PEc"/>
-                        <color key="backgroundColor" red="0.87450980389999999" green="0.96470588239999999" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="IZj-4b-FWj" firstAttribute="centerX" secondItem="UEq-Hc-A6C" secondAttribute="centerX" id="0Ct-1X-ljh"/>
-                            <constraint firstItem="9Hw-6C-5b9" firstAttribute="centerX" secondItem="UEq-Hc-A6C" secondAttribute="centerX" id="5lb-me-1VV"/>
-                            <constraint firstItem="T4N-yS-Hvv" firstAttribute="top" secondItem="IZj-4b-FWj" secondAttribute="bottom" constant="35" id="M4T-4x-Tzf"/>
-                            <constraint firstItem="IZj-4b-FWj" firstAttribute="top" secondItem="751-8C-PEc" secondAttribute="top" constant="159" id="WPd-SI-bI2"/>
-                            <constraint firstItem="T4N-yS-Hvv" firstAttribute="centerX" secondItem="UEq-Hc-A6C" secondAttribute="centerX" id="quO-FP-Wte"/>
-                            <constraint firstItem="9Hw-6C-5b9" firstAttribute="top" secondItem="T4N-yS-Hvv" secondAttribute="bottom" constant="8" id="z6J-m5-qXD"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="IZj-4b-FWj"/>
-                                <exclude reference="9Hw-6C-5b9"/>
-                                <exclude reference="T4N-yS-Hvv"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" title="Memo" id="Yi0-m2-jsS">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="info.circle" catalog="system" id="Dc7-br-4Q1">
-                            <connections>
-                                <segue destination="W2J-lR-4nW" kind="presentation" id="Uyk-8r-uCD"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.pencil" catalog="system" id="n3S-UA-gjD">
-                            <connections>
-                                <segue destination="SoK-mr-xNv" kind="show" id="lur-FS-WPF"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GFC-uA-AvQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1322" y="25"/>
+            <point key="canvasLocation" x="1486" y="-726"/>
         </scene>
         <!--Detail-->
         <scene sceneID="P0f-5V-zvS">
             <objects>
-                <viewController title="Detail" id="4Ss-QV-52A" customClass="DetailViewController" customModule="rsnt_really_simple_note_taking_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="4Ss-QV-52A" customClass="DetailViewController" customModule="Timo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RVB-zw-XPJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -830,7 +676,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Note Details" id="wC1-Pg-bof"/>
+                    <navigationItem key="navigationItem" title="Feeling Details" id="wC1-Pg-bof"/>
                     <connections>
                         <outlet property="noteDate" destination="JI3-M4-rLx" id="NGk-ut-8p7"/>
                         <outlet property="noteTextTextView" destination="ybU-92-xKu" id="f6D-bP-sd6"/>
@@ -844,7 +690,7 @@
         <!--Really Simple Note Create Change View Controller-->
         <scene sceneID="iyb-jf-5h2">
             <objects>
-                <viewController id="31b-8C-KYg" customClass="ReallySimpleNoteCreateChangeViewController" customModule="rsnt_really_simple_note_taking_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="31b-8C-KYg" customClass="ReallySimpleNoteCreateChangeViewController" customModule="Timo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZBa-xb-dDA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -926,19 +772,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnR-Oc-goC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6289" y="60"/>
+            <point key="canvasLocation" x="5372" y="826"/>
         </scene>
         <!--Master-->
         <scene sceneID="rIx-Xb-aLY">
             <objects>
-                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="SoK-mr-xNv" customClass="MasterViewController" customModule="rsnt_really_simple_note_taking_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="SoK-mr-xNv" customClass="MasterViewController" customModule="Timo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cHA-1e-SaR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty Memo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LDI-Ec-O2j">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView key="tableFooterView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-memo" id="5IE-TQ-gjM">
+                            <rect key="frame" x="0.0" y="201" width="375" height="190"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="104" id="cSc-rs-aIF" customClass="ReallySimpleNoteUITableViewCell" customModule="rsnt_really_simple_note_taking_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="104"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="104" id="cSc-rs-aIF" customClass="ReallySimpleNoteUITableViewCell" customModule="Timo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="69" width="375" height="104"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cSc-rs-aIF" id="5OF-5w-kfr">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
@@ -991,11 +848,100 @@
                             <outlet property="delegate" destination="SoK-mr-xNv" id="Ggy-QE-a0n"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Really Simple Note Taking App" id="nX7-M1-p3O"/>
+                    <navigationItem key="navigationItem" title="Timo" id="nX7-M1-p3O"/>
+                    <connections>
+                        <outlet property="emtpyMemo" destination="LDI-Ec-O2j" id="HFP-Y2-srE"/>
+                        <outlet property="memoImage" destination="5IE-TQ-gjM" id="G39-gh-KyZ"/>
+                    </connections>
                 </tableViewController>
+                <view contentMode="scaleToFill" id="OX6-y8-qQf">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="592"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No Message" translatesAutoresizingMaskIntoConstraints="NO" id="ehW-Pf-goM">
+                            <rect key="frame" x="97.666666666666686" y="174" width="180" height="210"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="210" id="0HA-hy-aVE"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty Topic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fed-WF-VAj">
+                            <rect key="frame" x="121" y="405" width="133" height="37"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="2gy-KP-I9U"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be the first to post a new Topic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnD-z0-VLa">
+                            <rect key="frame" x="69.333333333333329" y="450" width="236.33333333333337" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="Oug-0F-75R"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="o2a-lt-ypV"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ehW-Pf-goM" firstAttribute="top" secondItem="OX6-y8-qQf" secondAttribute="top" constant="174" id="1oU-wY-JQ5"/>
+                        <constraint firstItem="ehW-Pf-goM" firstAttribute="centerX" secondItem="OX6-y8-qQf" secondAttribute="centerX" id="3Pk-8n-HeP"/>
+                        <constraint firstItem="AnD-z0-VLa" firstAttribute="top" secondItem="Fed-WF-VAj" secondAttribute="bottom" constant="8" id="A0v-DS-3Ih"/>
+                        <constraint firstItem="Fed-WF-VAj" firstAttribute="centerX" secondItem="OX6-y8-qQf" secondAttribute="centerX" id="RFl-Kd-5pc"/>
+                        <constraint firstItem="AnD-z0-VLa" firstAttribute="centerX" secondItem="OX6-y8-qQf" secondAttribute="centerX" id="YYZ-16-Ctt"/>
+                        <constraint firstItem="Fed-WF-VAj" firstAttribute="top" secondItem="ehW-Pf-goM" secondAttribute="bottom" constant="21" id="gXG-se-CJy"/>
+                    </constraints>
+                </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="taN-xJ-Wx4" sceneMemberID="firstResponder"/>
+                <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="104" id="tyX-l9-97b" customClass="ReallySimpleNoteUITableViewCell" customModule="Timo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tyX-l9-97b" id="g4J-2L-1VQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZpT-Wm-8fD">
+                                <rect key="frame" x="16" y="16" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKo-qc-rST">
+                                <rect key="frame" x="16" y="44.666666666666664" width="343" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0d-jE-yZl">
+                                <rect key="frame" x="16" y="69.666666666666671" width="343" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="uKo-qc-rST" firstAttribute="leading" secondItem="g4J-2L-1VQ" secondAttribute="leading" constant="16" id="1dM-wz-rIl"/>
+                            <constraint firstItem="ZpT-Wm-8fD" firstAttribute="top" secondItem="g4J-2L-1VQ" secondAttribute="top" constant="16" id="A4f-hR-vok"/>
+                            <constraint firstItem="uKo-qc-rST" firstAttribute="top" secondItem="ZpT-Wm-8fD" secondAttribute="bottom" constant="7.5" id="GFE-Xm-B7J"/>
+                            <constraint firstItem="e0d-jE-yZl" firstAttribute="leading" secondItem="g4J-2L-1VQ" secondAttribute="leading" constant="16" id="LmB-ff-nsu"/>
+                            <constraint firstAttribute="trailing" secondItem="ZpT-Wm-8fD" secondAttribute="trailing" constant="16" id="M24-ly-l69"/>
+                            <constraint firstAttribute="trailing" secondItem="e0d-jE-yZl" secondAttribute="trailing" constant="16" id="Tc3-XL-tj6"/>
+                            <constraint firstItem="ZpT-Wm-8fD" firstAttribute="leading" secondItem="g4J-2L-1VQ" secondAttribute="leading" constant="16" id="YAs-Cz-Fpp"/>
+                            <constraint firstAttribute="trailing" secondItem="uKo-qc-rST" secondAttribute="trailing" constant="16" id="erz-lI-w2S"/>
+                            <constraint firstItem="e0d-jE-yZl" firstAttribute="top" secondItem="uKo-qc-rST" secondAttribute="bottom" constant="8" id="hcR-hP-A4T"/>
+                        </constraints>
+                    </tableViewCellContentView>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="noteDateLabel" destination="uKo-qc-rST" id="8wb-d5-duL"/>
+                        <outlet property="noteTextLabel" destination="e0d-jE-yZl" id="orf-6W-IoB"/>
+                        <outlet property="noteTitleLabel" destination="ZpT-Wm-8fD" id="RzZ-zO-OHm"/>
+                    </connections>
+                </tableViewCell>
             </objects>
-            <point key="canvasLocation" x="2490" y="24"/>
+            <point key="canvasLocation" x="1486" y="4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HKC-5R-6Kk">
@@ -1004,6 +950,7 @@
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="zDu-gY-HGT">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1653864682" green="0.85717344279999996" blue="0.67449432610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <connections>
                         <segue destination="4Ss-QV-52A" kind="relationship" relationship="rootViewController" id="7fY-cn-nUG"/>
@@ -1011,11 +958,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTw-zk-U1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4618" y="46"/>
+            <point key="canvasLocation" x="5372" y="-746"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lur-FS-WPF"/>
+        <segue reference="UKO-8c-1ah"/>
         <segue reference="zqg-3P-Qiu"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1024,11 +971,9 @@
         <image name="bubble.left.fill" catalog="system" width="128" height="110"/>
         <image name="comment_icon_label" width="15" height="12"/>
         <image name="empty-memo" width="719" height="790"/>
-        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="128" height="81"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="plus.bubble.fill" catalog="system" width="128" height="110"/>
-        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
