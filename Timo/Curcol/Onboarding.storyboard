@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pwf-Up-9BT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--timoti-->
+        <scene sceneID="SkU-Gq-Wk4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Curcol" referencedIdentifier="timoti" id="SZh-Mh-V6K" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="JuD-dW-NJy"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="19i-eq-NsP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57" y="296"/>
+        </scene>
+        <!--Intro View Controller-->
+        <scene sceneID="VUf-9O-2HB">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingScene" id="pwf-Up-9BT" customClass="IntroViewController" customModule="Timo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M5x-Xo-S7Z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWu-i5-hAM">
+                                <rect key="frame" x="360" y="816" width="38" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Skip">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipButtonTapped:" destination="pwf-Up-9BT" eventType="touchUpInside" id="89X-fg-BWo"/>
+                                    <segue destination="SZh-Mh-V6K" kind="presentation" identifier="gotomainmenu" modalPresentationStyle="fullScreen" id="xNx-of-KAI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="guk-0b-IaQ"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="guk-0b-IaQ" firstAttribute="bottom" secondItem="uWu-i5-hAM" secondAttribute="bottom" constant="10" id="Gsn-W4-pr2"/>
+                            <constraint firstItem="guk-0b-IaQ" firstAttribute="trailing" secondItem="uWu-i5-hAM" secondAttribute="trailing" constant="16" id="akv-Bl-GLL"/>
+                            <constraint firstItem="uWu-i5-hAM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="M5x-Xo-S7Z" secondAttribute="leading" constant="20" symbolic="YES" id="edd-bR-oMB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CqJ-fj-8ND"/>
+                    <connections>
+                        <outlet property="skipButton" destination="uWu-i5-hAM" id="c2h-F1-cV6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OMF-st-5uE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-909" y="275"/>
+        </scene>
+    </scenes>
+</document>

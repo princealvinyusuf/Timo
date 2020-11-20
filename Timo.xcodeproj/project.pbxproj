@@ -20,6 +20,8 @@
 		9F53D62C24362750008198DC /* ReallySimpleNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53D62B24362750008198DC /* ReallySimpleNote.swift */; };
 		9F53D62E24362758008198DC /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53D62D24362758008198DC /* MasterViewController.swift */; };
 		9F53D62F243634DD008198DC /* ReallySimpleNotesData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F148C7124360C6A00580D3D /* ReallySimpleNotesData.xcdatamodeld */; };
+		9FB70F032567B8D2006B2E39 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB70F012567B743006B2E39 /* Onboarding.storyboard */; };
+		9FB70F072567BA03006B2E39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB70F062567BA03006B2E39 /* SceneDelegate.swift */; };
 		ACAEF0CF2133A6A600578BCF /* PageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAEF0BA2133A6A500578BCF /* PageContainer.swift */; };
 		ACAEF0D02133A6A600578BCF /* PageViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAEF0BC2133A6A500578BCF /* PageViewItem.swift */; };
 		ACAEF0D12133A6A600578BCF /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAEF0BD2133A6A500578BCF /* PageView.swift */; };
@@ -71,6 +73,8 @@
 		9F53D62924362736008198DC /* ReallySimpleNoteCreateChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReallySimpleNoteCreateChangeViewController.swift; sourceTree = "<group>"; };
 		9F53D62B24362750008198DC /* ReallySimpleNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReallySimpleNote.swift; sourceTree = "<group>"; };
 		9F53D62D24362758008198DC /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		9FB70F012567B743006B2E39 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		9FB70F062567BA03006B2E39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ACAEF0BA2133A6A500578BCF /* PageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContainer.swift; sourceTree = "<group>"; };
 		ACAEF0BC2133A6A500578BCF /* PageViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewItem.swift; sourceTree = "<group>"; };
 		ACAEF0BD2133A6A500578BCF /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				FC409279211D9847009E8D5E /* Curcol.storyboard */,
+				9FB70F012567B743006B2E39 /* Onboarding.storyboard */,
 				FC409268211D7C96009E8D5E /* CurcolController.swift */,
 				FC6E244021323BCA00F180F8 /* CurcolTableViewCell.swift */,
 				FC6E243E21323AB000F180F8 /* CurcolCommentViewController.swift */,
@@ -307,6 +312,7 @@
 				FC40924D211D4A97009E8D5E /* AppDelegate.swift */,
 				FC409259211D4A9A009E8D5E /* Info.plist */,
 				9F1614CE242CF2A100E344C3 /* GoogleService-Info.plist */,
+				9FB70F062567BA03006B2E39 /* SceneDelegate.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB70F032567B8D2006B2E39 /* Onboarding.storyboard in Resources */,
 				ACAEF0E22133A6C600578BCF /* Nunito-Regular.ttf in Resources */,
 				9F1614CF242CF2A100E344C3 /* GoogleService-Info.plist in Resources */,
 				FC02D11721364B7C002A9FDB /* Assets.xcassets in Resources */,
@@ -462,6 +469,7 @@
 				ACAEF0D92133A6A600578BCF /* ConstraintsHelper.swift in Sources */,
 				FCA6EAA02133163000CCA6B7 /* CurcolComment.swift in Sources */,
 				9F47155124339D6100D417D3 /* AboutController.swift in Sources */,
+				9FB70F072567BA03006B2E39 /* SceneDelegate.swift in Sources */,
 				ACAEF0D02133A6A600578BCF /* PageViewItem.swift in Sources */,
 				ACAEF0CF2133A6A600578BCF /* PageContainer.swift in Sources */,
 				9F53D62824361ABC008198DC /* ReallySimpleNoteStorage.swift in Sources */,
@@ -550,7 +558,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -604,7 +612,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

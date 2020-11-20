@@ -27,6 +27,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         return true
     }
 
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+        let launchedBefore = UserDefaults.standard.bool(forKey: "hasLaunched")
+        let launchStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        var vc: UIViewController
+        if launchedBefore
+        {
+            vc = mainStoryboard.instantiateInitialViewController()!
+        }
+        else
+        {
+            vc = launchStoryboard.instantiateViewController(identifier: "OnboardingScene")
+        }
+        UserDefaults.standard.set(true, forKey: "hasLaunched")
+        self.window?.rootViewController = vc
+    }
+
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
