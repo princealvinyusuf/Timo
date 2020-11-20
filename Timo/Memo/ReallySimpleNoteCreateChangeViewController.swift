@@ -12,7 +12,7 @@ class ReallySimpleNoteCreateChangeViewController : UIViewController, UITextViewD
     
     @IBOutlet weak var noteTitleTextField: UITextField!
     @IBOutlet weak var noteTextTextView: UITextView!
-    @IBOutlet weak var noteDoneButton: UIButton!
+    @IBOutlet weak var noteDoneButton: UIBarButtonItem!
     @IBOutlet weak var noteDateLabel: UILabel!
     
     private let noteCreationTimeStamp : Int64 = Date().toSeconds()
@@ -32,7 +32,7 @@ class ReallySimpleNoteCreateChangeViewController : UIViewController, UITextViewD
         }
     }
     
-    @IBAction func doneButtonClicked(_ sender: UIButton, forEvent event: UIEvent) {
+    @IBAction func doneButtonClicked(_ sender: UIBarButtonItem, forEvent event: UIEvent) {
         // distinguish change mode and create mode
         if self.changingReallySimpleNote != nil {
             // change mode - change the item
